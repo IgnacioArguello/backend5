@@ -1,0 +1,25 @@
+include partials/head.pug
+include partials/header.pug
+.container.w-50
+  h2.mt-3.mb-3=subtitle
+  if message[0]
+    table.table.table-striped
+      thead
+        tr
+          th(scope='col') #ID
+          th(scope='col') Nombre
+          th(scope='col') Precio
+          th(scope='col') Foto
+      tbody.table-light
+        each val in message
+          tr.align-middle
+          th(scope='row')=val.id
+          td=val.title
+          td=val.price
+          td
+            img.img-thumbnail.shadow-sm(src=`${val.thumbnail}` width='80' height='80' alt=`${val.title}`) 
+  else
+    .bg-warning.rounded
+      h5.p-3 No hay productos en la lista
+  a(href='/')
+    button.btn.btn-success.container.mt-3 Cargar Productos

@@ -1,0 +1,14 @@
+include partials/head.pug
+include partials/header.pug
+.container.w-50.p-4
+  h2.mt-3.mb-3=subtitle
+  form.card.card-body.bg-secondary(action='/productos' method='POST')
+    .form-group
+      input.form-control.mt-1(type='text' name='title' placeholder='Ingrese titulo')
+    .form-group
+      input.form-control.mt-1(type='number' name='price' placeholder='Ingrese Precio')
+    .form-group
+      input.form-control.mt-1(type='text' name='thumbnail' placeholder='Ingrese Url Imagen')
+    input.btn.btn-warning.mt-1(type='submit')
+  a(href='/productos')
+    button.btn.btn-success.container.mt-3 Ver Lista de Productos
